@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    consumer:
+      boostrap-server: localhost:9092
+      group-id: consumer-1
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.support.serializer.JSonDeserializer
+      properties:
+        spring:
+          json:
+            trusted: *
+
+    producer:
+      boostrap-server: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.support.serializer.JSonSerializer
